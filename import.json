@@ -1,0 +1,108 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "e8ee5648",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter product ID:1200\n",
+      "Enter Quantity:4\n",
+      "product name:  A\n",
+      "price per unit:  80\n",
+      "amount to be paid:  320\n"
+     ]
+    }
+   ],
+   "source": [
+    "import json\n",
+    "\n",
+    "file = open('pharmacy.json', 'w')\n",
+    "json.dump(inventory, file )\n",
+    "\n",
+    "#$print(json_inventory)\n",
+    "\n",
+    "inventory = {\n",
+    "    1200 : {\"item\": \"Amoxicillin\" , \"price\" : 80 , \"quantity\" : 30 , \"category\": \"Antibiotic\" , \"rating\": 9},\n",
+    "    1201 : {\"item\": \"Azithromycin\" , \"price\" : 80 , \"quantity\" : 100 , \"category\": \"Antibiotic\" , \"rating\": 8},     \n",
+    "    1202 : {\"item\": \"Paracetamol\" , \"price\" : 40 , \"quantity\" : 10 , \"category\": \"Antipyretic\", \"rating\": 7}, \n",
+    "    1203 : {\"item\": \"Albuterol\" , \"price\" : 10 , \"quantity\" : 100 , \"category\": \"Dilator\", \"rating\": 8}, \n",
+    "    1204 : {\"item\": \"Amoxicillin(s)\" , \"price\" : 10 , \"quantity\" : 100 , \"category\": \"AntiBActerial\",\"rating\": 7},   \n",
+    "    1205 : {\"item\": \"Amoxicillin(m)\" , \"price\" : 20 , \"quantity\" : 100 , \"category\": \"AntiBActerial\", \"rating\": 8}, \n",
+    "    1206 : {\"item\": \"Amocixillin(l)\" , \"price\" : 40 , \"quantity\" : 50 , \"category\": \"AntiBActerial\", \"rating\": 6},   \n",
+    "    1207 : {\"item\": \"Cefdinir(s)\" , \"price\" : 10 , \"quantity\" : 300 , \"category\": \"AntiBacterial\", \"rating\": 5},   \n",
+    "    1207 : {\"item\": \"Cefdinir(s)\" , \"price\" : 10 , \"quantity\" : 300 , \"category\": \"AntiBacterial\", \"rating\": 5},   \n",
+    "    1208 : {\"item\": \"Cefdinir(m)\" , \"price\" : 40 , \"quantity\" : 400 , \"category\": \"AntiBacterial\",\"rating\": 4},   \n",
+    "    1209 : {\"item\": \"Cephalexin\" , \"price\" : 10 , \"quantity\" : 500 , \"category\": \"AntiBacterial\",\"rating\": 10},    \n",
+    "    1210 : {\"item\": \"Fluticasone\" , \"price\" : 1 , \"quantity\" : 1000 , \"category\": \"Steroid\", \"rating\": 9},    \n",
+    "    1211 : {\"item\": \"Predisolone\" , \"price\" : 1 , \"quantity\" : 1000 , \"category\": \"Steroid\",\"rating\": 8}, \n",
+    "    1212 : {\"item\": \"Ibuprofen\" , \"price\" : 10 , \"quantity\" : 200 , \"category\": \"AntiInflammatory\",\"rating\": 7},     \n",
+    "    1213 : {\"item\": \"Singulair\" , \"price\" : 100 , \"quantity\" : 100 , \"category\": \"AntiAllergent\",\"rating\": 2},      \n",
+    "    1214 : {\"item\": \"Trimethoprim\" , \"price\" : 5 , \"quantity\" : 200 , \"category\": \"Antboitic\",\"rating\": 3},     \n",
+    "    1215 : {\"item\": \"Tylenol\" , \"price\" : 70 , \"quantity\" : 80 , \"category\": \"PainKiller\",\"rating\": 4},     \n",
+    "    1216 : {\"item\": \"Vicodin\" , \"price\" : 30 , \"quantity\" : 80 , \"category\": \"Painkiller\",\"rating\": 5},    \n",
+    "    1217 : {\"item\": \"Mupirocin\" , \"price\" : 100 , \"quantity\" : 90 , \"category\": \"AntiBacterial\",\"rating\": 8},    \n",
+    "    1218 : {\"item\": \"Nystatin\" , \"price\" : 120 , \"quantity\" : 40 , \"category\": \"AntiFungal\",\"rating\": 9},   \n",
+    "    1219 : {\"item\": \"Dextromorphan(m)\" , \"price\" : 20 , \"quantity\" : 100 , \"category\": \"Antihistamine\",\"rating\": 8}, \n",
+    "    1220 : {\"item\": \"Dextromorphan(l)\" , \"price\" : 50 , \"quantity\" : 300 , \"category\": \"Antihistamine\",\"rating\": 10}, \n",
+    "    1221 : {\"item\": \"Phenilephrine\" , \"price\" : 10 , \"quantity\" : 200 , \"category\": \"Antihistamine\",\"rating\": 7}     \n",
+    "    \n",
+    "}\n",
+    "\n",
+    "ui_product = int(input(\"Enter product ID:\"))\n",
+    "ui_quantity = int(input(\"Enter Quantity:\"))\n",
+    "\n",
+    "product = inventory.get(ui_product)\n",
+    "\n",
+    "if product:\n",
+    "  print('product name: ',product.get('item'))\n",
+    "  print('price per unit: ', product.get('price'))\n",
+    "  print('amount to be paid: ', ui_quantity*product.get('price'))\n",
+    "  product['quantity']-=ui_quantity\n",
+    "else:\n",
+    "  print('product not found')\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "4d0ca6aa",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6c1bed14",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
